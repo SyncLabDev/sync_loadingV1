@@ -1,0 +1,9 @@
+<svg width="320" height="112" viewBox="0 0 320 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">SYNC HORIZON placeholder mark</title>
+  <path d="M8 20H76L90 34H43L34 43H83L96 56L74 78H8V64H68L77 55H27L14 42L36 20H8Z" fill="#F7F9FC"/>
+  <path d="M107 20H125L146 45L168 20H187L153 59V78H137V59L107 20Z" fill="#F7F9FC"/>
+  <path d="M198 20H214L258 58V20H274V78H259L214 40V78H198V20Z" fill="#F7F9FC"/>
+  <path d="M294 20H312L280 49L314 78H293L260 49L294 20Z" fill="#6BBFFF" opacity=".9"/>
+  <path d="M8 96H172" stroke="#6BBFFF" stroke-width="2"/>
+  <text x="184" y="100" fill="#919AAA" font-family="Arial, sans-serif" font-size="12" letter-spacing="5">HORIZON</text>
+</svg>

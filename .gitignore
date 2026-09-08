@@ -1,0 +1,86 @@
+# Dependencies & Package Managers
+node_modules/
+web/node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# Build & Vite Cache
+web/.vite/
+.vite/
+*.tsbuildinfo
+web/tsconfig.tsbuildinfo
+dist/
+build/
+web/build/
+
+# Note: web/dist/ is intentionally tracked because FiveM loads prebuilt NUI assets
+# directly without requiring Node.js or pnpm on customer servers.
+!web/dist/
+!web/dist/**
+
+# Environment Variables & Sensitive Keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# Tests, Coverage & E2E Reports
+web/coverage/
+coverage/
+web/test-results/
+test-results/
+web/playwright-report/
+playwright-report/
+.playwright-mcp/
+.nyc_output/
+web/blob-report/
+blob-report/
+
+# Logs & Debugging
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS Artifacts
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE & Editor Configurations
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# FiveM & Server Artifacts
+cache/
+.cache/
+server.cfg
+
+# Temporary & AI Tooling Files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+design-plans/
+.agents/
+.cursor/
+.claude/
