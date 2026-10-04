@@ -6,30 +6,24 @@ HORIZON features a built-in, responsive audio player designed specifically for F
 
 ## Audio Track Configuration
 
-Audio tracks are configured as an array in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua):
+Audio tracks are configured as an array in [`config.lua`](../config.lua):
 
 ```lua
 Config.Music = {
     enabled = true,
     mode = 'auto',           -- 'auto' | 'expanded' | 'compact'
     autoplay = true,         -- Attempt auto-playback on connect
-    volume = 0.45,           -- Default initial volume (0.0 to 1.0)
+    volume = 0.22,           -- Default initial volume (0.0 to 1.0)
     rememberVolume = true,   -- Store user's volume adjustments in localStorage
     shuffle = false,         -- Randomize track order
     repeatMode = 'all',      -- 'off' | 'one' | 'all'
     collapseAfter = 5000,    -- Inactivity delay (ms) before auto-collapsing in 'auto' mode
     tracks = {
         {
-            title = 'GRAILED',
-            artist = '1nonly & Freddie Dredd',
-            file = 'assets/audio/grailed.mp3',
-            coverArt = 'assets/audio/grailed-cover.jpg', -- Optional square album art
-        },
-        {
-            title = 'HOLD MY HAND!',
-            artist = 'MVSTERIOUS & KVRXD',
-            file = 'assets/audio/hold-my-hand.mp3',
-            coverArt = 'assets/audio/hold-my-hand-cover.jpg',
+            title = 'HORIZON DRIFT',
+            artist = 'SYNC LAB',
+            file = 'assets/audio/horizon-drift.wav',
+            -- coverArt = 'assets/audio/your-cover.jpg', -- Optional
         },
     },
 }
@@ -110,4 +104,4 @@ When `Config.Music.rememberVolume = true`, any volume level chosen by the player
 ## Licensing & Copyright
 
 > [!IMPORTANT]
-> The demonstration tracks included with this resource are for testing and demonstration purposes. Server owners are legally responsible for licensing any commercial or copyright-protected music streamed to players.
+> `horizon-drift.wav` is the only bundled demonstration track in the public release. Server owners are legally responsible for licensing any replacement music streamed to players.

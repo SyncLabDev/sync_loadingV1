@@ -13,7 +13,7 @@ sync_loading/
 └── web/dist/assets/branding/your-logo.svg
 ```
 
-In [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua):
+In [`config.lua`](../config.lua):
 ```lua
 Config.Brand = {
     logo = 'assets/branding/your-logo.svg', -- SVG, WebP, or PNG

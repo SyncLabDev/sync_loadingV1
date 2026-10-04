@@ -5,8 +5,8 @@ import type { MusicConfig } from '../types'
 import { MusicPlayer } from './MusicPlayer'
 
 const tracks: MusicConfig['tracks'] = [
-  { title: 'GRAILED', artist: '1nonly & Freddie Dredd', file: 'assets/audio/grailed.mp3', coverArt: 'assets/audio/grailed-cover.jpg' },
-  { title: 'HOLD MY HAND!', artist: 'MVSTERIOUS & KVRXD', file: 'assets/audio/hold-my-hand.mp3', coverArt: 'assets/audio/hold-my-hand-cover.jpg' },
+  { title: 'TRACK ONE', artist: 'TEST ARTIST', file: 'assets/audio/track-one.mp3', coverArt: 'assets/audio/track-one.jpg' },
+  { title: 'TRACK TWO', artist: 'TEST ARTIST', file: 'assets/audio/track-two.mp3', coverArt: 'assets/audio/track-two.jpg' },
 ]
 
 const musicConfig = (overrides: Partial<MusicConfig> = {}): MusicConfig => ({
@@ -51,13 +51,13 @@ describe('MusicPlayer', () => {
   it('updates the complete track identity with next and previous controls', () => {
     render(<MusicPlayer config={musicConfig({ mode: 'expanded' })} completing={false} />)
     fireEvent.click(screen.getByLabelText('Next track'))
-    expect(screen.getByText('HOLD MY HAND!')).toBeInTheDocument()
-    expect(screen.getByText('MVSTERIOUS & KVRXD')).toBeInTheDocument()
+    expect(screen.getByText('TRACK TWO')).toBeInTheDocument()
+    expect(screen.getAllByText('TEST ARTIST').length).toBeGreaterThan(0)
     expect(screen.getByText('02 / 02')).toBeInTheDocument()
-    expect(screen.getByAltText('HOLD MY HAND!')).toHaveAttribute('src', 'assets/audio/hold-my-hand-cover.jpg')
+    expect(screen.getByAltText('TRACK TWO')).toHaveAttribute('src', 'assets/audio/track-two.jpg')
 
     fireEvent.click(screen.getByLabelText('Previous track'))
-    expect(screen.getByText('GRAILED')).toBeInTheDocument()
+    expect(screen.getByText('TRACK ONE')).toBeInTheDocument()
     expect(screen.getByText('01 / 02')).toBeInTheDocument()
   })
 

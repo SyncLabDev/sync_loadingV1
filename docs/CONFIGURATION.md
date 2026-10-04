@@ -1,6 +1,6 @@
 # Configuration Reference
 
-All user configuration for **SYNC / HORIZON** is defined in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua). Values are validated, clamped, and sanitized before reaching the browser NUI.
+All user configuration for **SYNC / HORIZON** is defined in [`config.lua`](../config.lua). Values are validated, clamped, and sanitized before reaching the browser NUI.
 
 ---
 
@@ -168,11 +168,6 @@ Config.Moments = {
             title = 'BE PRESENT',
             text = 'Let the scene breathe. The best moments are shared.',
         },
-        {
-            category = 'roleplay',
-            title = 'YOUR STORY',
-            text = 'Listen first. React honestly. Leave a mark on the city.',
-        },
     },
 }
 ```
@@ -187,38 +182,20 @@ Config.Music = {
     enabled = true,
     mode = 'auto',           -- 'auto' | 'expanded' | 'compact'
     autoplay = true,
-    volume = 0.45,           -- Default initial volume (0.0 to 1.0)
+    volume = 0.22,           -- Default volume level (0.0 to 1.0)
     rememberVolume = true,   -- Persist player volume in browser localStorage
     shuffle = false,
     repeatMode = 'all',      -- 'off' | 'one' | 'all'
     collapseAfter = 5000,    -- Inactivity delay in ms before auto-collapsing
     tracks = {
         {
-            title = 'GRAILED',
-            artist = '1nonly & Freddie Dredd',
-            file = 'assets/audio/grailed.mp3',
-            coverArt = 'assets/audio/grailed-cover.jpg',
-        },
-        {
-            title = 'HOLD MY HAND!',
-            artist = 'MVSTERIOUS & KVRXD',
-            file = 'assets/audio/hold-my-hand.mp3',
-            coverArt = 'assets/audio/hold-my-hand-cover.jpg',
+            title = 'HORIZON DRIFT',
+            artist = 'SYNC LAB',
+            file = 'assets/audio/horizon-drift.wav',
         },
     },
 }
 ```
-
-| Key | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `enabled` | `boolean` | `true` | Enable or disable the audio player |
-| `mode` | `string` | `'auto'` | Player view mode: `'expanded'`, `'compact'`, or `'auto'` (hover-expand) |
-| `autoplay` | `boolean` | `true` | Auto-start audio upon loading (subject to browser interaction policy) |
-| `volume` | `number` | `0.45` | Default volume level (range `0.0` to `1.0`) |
-| `rememberVolume` | `boolean` | `true` | Store user volume preferences in local storage |
-| `shuffle` | `boolean` | `false` | Enable randomized playlist ordering |
-| `repeatMode` | `string` | `'all'` | Repeat mode: `'off'`, `'one'`, or `'all'` |
-| `collapseAfter` | `number` | `5000` | Inactivity timer (ms) to collapse player back to minimal bar |
 
 ---
 
@@ -243,7 +220,7 @@ Shutdown and completion transition settings.
 
 ```lua
 Config.Lifecycle = {
-    autoShutdown = false,   -- If false, awaits exports['sync_loading']:Complete(); if true, closes on FiveM init
+    autoShutdown = true,    -- Close immediately when FiveM finishes client init
     shutdownDelay = 1700,   -- Transition animation duration before NUI teardown
     failsafeDelay = 45000,  -- Hard safety cutoff (ms) if custom completion is blocked
 }
@@ -251,7 +228,7 @@ Config.Lifecycle = {
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `autoShutdown` | `boolean` | `false` | If `false`, awaits spawn/export call; if `true`, completes automatically on FiveM init |
+| `autoShutdown` | `boolean` | `true` | If `true`, completes automatically; if `false`, awaits export call |
 | `shutdownDelay` | `number` | `1700` | Duration (ms) of the retraction animation before NUI is shut down |
 | `failsafeDelay` | `number` | `45000` | Safety timeout to ensure players never get stuck on a loading screen |
 

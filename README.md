@@ -1,4 +1,4 @@
-# SYNC Loading — 02 / HORIZON
+# SYNC Loading — 01 / HORIZON
 
 [![FiveM](https://img.shields.io/badge/FiveM-Cerulean-blue.svg?style=flat-square)](https://fivem.net/)
 [![Lua](https://img.shields.io/badge/Lua-5.4-000080.svg?style=flat-square&logo=lua)](https://www.lua.org/)
@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF.svg?style=flat-square&logo=vite)](https://vite.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-06B6D4.svg?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-SYNC%20Commercial-blue.svg?style=flat-square)](LICENSE.md)
+[![License](https://img.shields.io/badge/License-SYNC%20Free%20Resource-6BBFFF.svg?style=flat-square)](LICENSE.md)
 
 **HORIZON** is a cinematic FiveM loading screen by **SYNC Lab**. Designed with an asymmetric interface wedge that retracts seamlessly into gameplay, HORIZON keeps server media as the visual centerpiece while providing initialization milestones, playlist audio, server announcements, and full framework independence.
 
@@ -35,7 +35,7 @@
    └── [sync]/
        └── sync_loading/
    ```
-2. Open [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua) and configure your server branding, media sources, and audio playlist.
+2. Open [config.lua](config.lua) and configure your server branding, media sources, and audio playlist.
 3. Add the resource and recommended spinner override to your `server.cfg`:
    ```cfg
    # Hide the default bottom-right FiveM loading spinner
@@ -47,13 +47,15 @@
 4. Restart your FiveM server and connect.
 
 > [!NOTE]
-> The included [web/dist/](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/web/dist/) folder is precompiled and ready for production. End users do not need Node.js installed.
+> The included `web/dist/` folder is precompiled and ready for production. End users do not need Node.js installed.
 
 ---
 
 ## Custom Spawn & Multicharacter Integration
 
-By default in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua), `Config.Lifecycle.autoShutdown = false` so that the loading screen remains held until your custom character selection or spawn resource triggers completion. If you want HORIZON to close automatically without a custom spawn trigger as soon as FiveM client initialization completes, set `Config.Lifecycle.autoShutdown = true`.
+By default, HORIZON automatically closes when FiveM finishes initializing (`Config.Lifecycle.autoShutdown = true`).
+
+For custom character selection (e.g. QBCore, ESX, Ox, or custom spawn scripts), set `Config.Lifecycle.autoShutdown = false` in [config.lua](config.lua) and trigger completion when your spawn UI is ready.
 
 ### Client Export (Recommended)
 ```lua
@@ -72,7 +74,7 @@ TriggerEvent('sync_loading:complete')
 
 ## Configuration Overview
 
-All user configuration is handled in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua):
+All user configuration is handled in [config.lua](config.lua):
 
 | Configuration Group | Key Settings | Description |
 | :--- | :--- | :--- |
@@ -122,7 +124,7 @@ sync_loading/
 
 ## Documentation Index
 
-Explore the full documentation suite in the [docs/](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/docs/) directory:
+Explore the full documentation suite in the `docs/` directory:
 
 - [Installation Guide](docs/INSTALLATION.md) — Server setup and configuration prerequisites.
 - [Configuration Reference](docs/CONFIGURATION.md) — Comprehensive breakdown of every `config.lua` parameter.
@@ -160,10 +162,20 @@ pnpm build
 
 The local development server includes the **SYNC DEV / HORIZON** controller, allowing you to test progress states, simulate stages, switch chapters, test media error fallbacks, and trigger completion transitions without booting a FiveM server.
 
+### Build a Release Archive
+
+From the repository root on Windows, run:
+
+```powershell
+./scripts/build-release.ps1 -Version 1.0.0
+```
+
+The script rebuilds and verifies the frontend, checks the Lua files and production package, then creates `release/sync_loading-v1.0.0.zip` with a matching SHA-256 checksum. The archive contains only the ready-to-install FiveM resource; development source and tooling are excluded.
+
 ---
 
 ## License & Credits
 
-- Software licensed under the [SYNC LAB COMMERCIAL SOFTWARE LICENSE](LICENSE.md). Copyright © 2026 SYNC Lab. All Rights Reserved.
+- Released free of charge under the [SYNC LAB FREE RESOURCE LICENSE](LICENSE.md). Copyright © 2026 SYNC Lab.
 - Bundled demo images and ambient tracks are original demonstration placeholders. Server owners are responsible for licensing replacement audio, video footage, and branding.
 - See [Software License](LICENSE.md) and [Asset License Notes](docs/ASSET_LICENSE.md) for full terms.

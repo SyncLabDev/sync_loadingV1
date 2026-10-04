@@ -6,6 +6,11 @@ for (const file of required) {
   if (!existsSync(resolve(file))) throw new Error(`Missing production file: ${file}`)
 }
 
+const forbidden = ['grailed.mp3', 'grailed-cover.jpg', 'hold-my-hand.mp3', 'hold-my-hand-cover.jpg']
+for (const file of forbidden) {
+  if (existsSync(resolve('dist/assets/audio', file))) throw new Error(`Preview-only asset leaked into production: ${file}`)
+}
+
 const files = readdirSync(resolve('dist/assets'), { recursive: true }).map(String)
 const js = files.filter(file => file.endsWith('.js')).map(file => readFileSync(resolve('dist/assets', file), 'utf8')).join('\n')
 if (js.includes('SYNC DEV') || js.includes('Horizon development controller')) throw new Error('Development controller leaked into production build')

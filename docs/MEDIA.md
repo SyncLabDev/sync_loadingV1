@@ -6,7 +6,7 @@ HORIZON supports video backgrounds, static artwork, slideshow sequences, and mul
 
 ## Supported Media Types
 
-Configure `Config.Media.type` in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua):
+Configure `Config.Media.type` in [`config.lua`](../config.lua):
 
 | Type | Description |
 | :--- | :--- |

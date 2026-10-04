@@ -33,7 +33,7 @@ Download and extract the `sync_loading` folder into your server's resources dire
 > Keep the resource folder named `sync_loading`. Renaming the directory will break resource exports and NUI callbacks unless updated across client scripts.
 
 ### Step 2: Configure Server Details
-Open [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua) and customize your server name, tagline, branding assets, and audio tracks.
+Open [`config.lua`](../config.lua) and customize your server name, tagline, branding assets, and audio tracks.
 
 ### Step 3: Update `server.cfg`
 Add the following commands to your `server.cfg`:
@@ -56,14 +56,17 @@ Fully restart your FiveM server (`refresh` is not always sufficient due to clien
 
 ## Custom Lifecycle & Spawn Integration
 
-By default in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua), automatic shutdown is disabled (`Config.Lifecycle.autoShutdown = false`) so that HORIZON cleanly holds the loading screen open until your multicharacter system, character selection, or spawn selector is ready.
+By default, HORIZON automatically closes when FiveM finishes client initialization (`Config.Lifecycle.autoShutdown = true`).
 
-If your server does not use character selection or custom spawn logic and you want the screen to close as soon as FiveM client initialization finishes, set:
+If you use a character selector, multicharacter system, or spawn selector, you can hold the loading screen open until the character is selected or spawned.
+
+### 1. Disable Automatic Shutdown
+In [`config.lua`](../config.lua):
 ```lua
-Config.Lifecycle.autoShutdown = true
+Config.Lifecycle.autoShutdown = false
 ```
 
-### Trigger Completion in Your Spawn Resource (When `autoShutdown = false`)
+### 2. Trigger Completion in Your Spawn Resource
 
 Call either the export or the client event in your spawn management script once the player character or selector UI is ready:
 

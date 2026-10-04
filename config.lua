@@ -90,23 +90,16 @@ Config.Music = {
     enabled = true,
     mode = 'auto', -- expanded | compact | auto
     autoplay = true,
-    volume = 0.45,
+    volume = 0.22,
     rememberVolume = true,
     shuffle = false,
     repeatMode = 'all', -- off | one | all
     collapseAfter = 5000,
     tracks = {
         {
-            title = 'GRAILED',
-            artist = '1nonly & Freddie Dredd',
-            file = 'assets/audio/grailed.mp3',
-            coverArt = 'assets/audio/grailed-cover.jpg',
-        },
-        {
-            title = 'HOLD MY HAND!',
-            artist = 'MVSTERIOUS & KVRXD',
-            file = 'assets/audio/hold-my-hand.mp3',
-            coverArt = 'assets/audio/hold-my-hand-cover.jpg',
+            title = 'HORIZON DRIFT',
+            artist = 'SYNC LAB',
+            file = 'assets/audio/horizon-drift.wav',
         },
     },
 }
@@ -134,7 +127,7 @@ Config.Motion = {
 }
 
 Config.Lifecycle = {
-    autoShutdown = false,
+    autoShutdown = true,
     shutdownDelay = 1700,
     failsafeDelay = 45000,
 }

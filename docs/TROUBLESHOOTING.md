@@ -70,7 +70,7 @@ When troubleshooting issues in FiveM:
 
 | Possible Cause | Resolution |
 | :--- | :--- |
-| **Long Server Name or Slogan** | Set `Config.Layout.wedgeWidth = 'compact'` in [config.lua](file:///g:/SYNC%20WORKSHOP/development_phase/sync_loading/config.lua). |
+| **Long Server Name or Slogan** | Set `Config.Layout.wedgeWidth = 'compact'` in [`config.lua`](../config.lua). |
 | **Excessive Moment Text** | Keep community moments to 1–2 concise sentences. |
 
 ---

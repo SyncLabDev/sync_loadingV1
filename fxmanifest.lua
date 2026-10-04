@@ -4,7 +4,7 @@ lua54 'yes'
 
 name 'sync_loading'
 author 'SYNC Lab'
-description 'SYNC / 02 — HORIZON cinematic FiveM loading screen'
+description 'SYNC / 01 — HORIZON cinematic FiveM loading screen'
 version '1.0.0'
 
 loadscreen 'web/dist/index.html'

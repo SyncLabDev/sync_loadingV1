@@ -29,7 +29,7 @@ export default function App() {
   return <main className={`horizon-root side-${config.Layout.wedgeSide} wedge-${config.Layout.wedgeWidth} phase-${state.phase}`} style={style}>
     <CinematicMedia config={config} chapterIndex={state.chapterIndex} forcedFailure={mediaFailure} />
     <div className="completion-veil" aria-hidden="true" />
-    <div className="top-micro"><span>SYNC / 02 — HORIZON</span><span>{config.Server.name}</span></div>
+    <div className="top-micro"><span>SYNC / 01 — HORIZON</span><span>{config.Server.name}</span></div>
     <HorizonWedge config={config} stages={stages} moment={moment} momentIndex={state.momentIndex} chapterLabel={chapter?.label} phase={state.phase} />
     <MusicPlayer config={config.Music} completing={state.phase === 'completing'} />
     <ProgressDisplay state={state} />
